@@ -1332,7 +1332,72 @@ body {
     transform: scale(0);
   }
 }
+.valentine-message {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #ff6b81;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  z-index: 200;
+  animation: fadeInText 2s ease forwards;
+  opacity: 0;
+}
+
+.valentine-message h1 {
+  font-size: 4vmin;
+  margin-bottom: 1vmin;
+}
+
+.valentine-message p {
+  font-size: 2.5vmin;
+}
+
+.heart {
+  width: 5vmin;
+  height: 5vmin;
+  background-color: #ff4b6e;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1vmin;
+  transform: rotate(-45deg);
+  animation: heartbeat 1s infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  width: 5vmin;
+  height: 5vmin;
+  background-color: #ff4b6e;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  top: -2.5vmin;
+  left: 0;
+}
+
+.heart::after {
+  left: 2.5vmin;
+  top: 0;
+}
+
+@keyframes fadeInText {
+  to { opacity: 1; }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1) rotate(-45deg); }
+  25% { transform: scale(1.2) rotate(-45deg); }
+  50% { transform: scale(1) rotate(-45deg); }
+  75% { transform: scale(1.2) rotate(-45deg); }
+}
+
 .container * {
   -webkit-animation-play-state: paused !important;
           animation-play-state: paused !important;
+
 }
