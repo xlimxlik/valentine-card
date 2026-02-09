@@ -19,3 +19,4 @@ document.body.addEventListener('click', () => {
     }, 100); // каждые 0.1 сек +0.01 к громкости
   }
 });
+
