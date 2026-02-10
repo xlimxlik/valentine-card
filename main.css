@@ -1349,6 +1349,18 @@ body,
   );
   overflow: hidden;
 }
+/* убираем все тени у листьев и травы */
+.flower__leaf,
+.flower__line,
+.flower__line__leaf,
+.flower__g-front__leaf,
+.flower__g-fr__leaf,
+.long-g .leaf {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+
 
 
 
