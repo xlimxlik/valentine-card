@@ -1361,23 +1361,60 @@ overflow: hidden;
   opacity: 1 !important;
 }
 
-/* Заменяем темный цвет на прозрачный в градиентах */
+/* Полное удаление всех теней у передней травы и длинных травинок */
+.flower__g-front,
+.flower__g-front *,
+.flower__g-fr,
+.flower__g-fr *,
+.long-g--6,
+.long-g--7,
+.long-g--6 *,
+.long-g--7 * {
+  box-shadow: none !important;
+  filter: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  opacity: 1 !important;
+  background-image: none !important;
+}
+
+/* Удаляем размытие у длинных травинок */
+.long-g--6,
+.long-g--7 {
+  filter: none !important;
+  transform: none !important;
+}
+
+/* Исправляем градиенты для передней травы */
 .flower__g-front__leaf {
-  background-image: linear-gradient(to bottom left, transparent, transparent), 
-                    linear-gradient(to bottom right, #064f0a 50%, transparent 50%, transparent) !important;
+  background: #064f0a !important;
 }
 
 .flower__g-fr__leaf {
-  background-image: linear-gradient(to bottom left, transparent, transparent 98%), 
-                    linear-gradient(to bottom right, #106e18 45%, transparent 50%, transparent) !important;
+  background: #106e18 !important;
 }
 
-/* Дополнительно удаляем тени у других элементов травы */
+/* Убираем тени у листьев травы */
 .flower__grass__leaf {
-  background-image: linear-gradient(to top, transparent, transparent 30%, var(--c)) !important;
+  background-image: linear-gradient(to top, transparent, #04661f) !important;
+  box-shadow: none !important;
 }
 
-.flower__g-long__bottom {
-  background-image: linear-gradient(to top, transparent 30%, var(--c)) !important;
+/* Убираем тени у основных стеблей травы */
+.flower__g-long__bottom,
+.flower__g-long__top {
+  background-image: linear-gradient(to top, transparent, #0e5b3c) !important;
+  box-shadow: none !important;
 }
+
+/* Убираем все оставшиеся тени у травы */
+.flower__grass,
+.flower__grass *,
+.long-g,
+.long-g * {
+  box-shadow: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
 
