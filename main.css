@@ -1350,6 +1350,7 @@ body,
   overflow: hidden;
 }
 /* убираем все тени у листьев и травы */
+/* убираем все тени и размытие у листьев и травы */
 .flower__leaf,
 .flower__line,
 .flower__line__leaf,
@@ -1358,24 +1359,20 @@ body,
 .long-g .leaf {
   box-shadow: none !important;
   filter: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  background-image: none !important; /* или сплошной цвет */
 }
-.flower__grass__overlay {
-  display: none !important;
-}
+
+.flower__grass__overlay,
 .long-g--6,
-.long-g--7 {
-  filter: none !important;
-}
+.long-g--7,
 [class*="overlay"],
 [class*="blur"] {
   filter: none !important;
+  display: none !important;
 }
-.flower__g-fr .leaf,
-.flower__g-fr__leaf {
-  box-shadow: none !important;
-  -webkit-mask-image: none !important;
-  mask-image: none !important;
-}
+
 
 
 
