@@ -1481,20 +1481,25 @@ overflow: hidden;
   margin: 0 auto;
   z-index: 2;
   overflow: hidden;
+
+  /* Центрирование текста */
   display: flex;
-  justify-content: center; /* по вертикали */
-  align-items: center;     /* по горизонтали */
+  justify-content: center; /* по горизонтали */
+  align-items: center;     /* по вертикали */
   padding: 20px;
+  text-align: center;      /* центрируем текст внутри блока */
 }
 
 .words {
-  width: 80%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #1d3557;
-  text-shadow: 0 1px 1px rgba(255,255,255,0.7);
-  text-align: center; /* центрируем текст */
-  line-height: 1.3; /* увеличим расстояние между строками */
+  font-size: 21px;        /* размер текста */
+  font-weight: bold;
+  color: #e63946;
+  line-height: 1.5;
+  max-width: 80%;         /* чтобы текст не прилипал к краям */
+  word-wrap: break-word;
 }
+
 
 .line1 {
   font-size: 21px;
@@ -1665,6 +1670,7 @@ overflow: hidden;
     font-size: 20px;
   }
 }
+
 
 
 
