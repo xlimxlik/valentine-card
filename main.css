@@ -1420,15 +1420,11 @@ overflow: hidden;
   display: none !important;
 }
 .envelope-wrapper {
-  position: relative; /* Чтобы z-index работал */
-  z-index: 100;       /* Выше, чем у цветов */
-  height: 380px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  margin-bottom: 30px;
-
+  position: absolute; /* фиксированное положение */
+  top: 5vmin;         /* отступ сверху */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;       /* выше цветов */
 }
 
 #envelope {
@@ -1663,6 +1659,7 @@ overflow: hidden;
     font-size: 20px;
   }
 }
+
 
 
 
