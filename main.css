@@ -1370,6 +1370,12 @@ body,
 [class*="blur"] {
   filter: none !important;
 }
+.flower__g-fr .leaf,
+.flower__g-fr__leaf {
+  box-shadow: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
 
 
 
