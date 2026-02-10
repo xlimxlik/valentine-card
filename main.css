@@ -21,6 +21,7 @@ body {
 }
 
 .night {
+  display: none;
   position: fixed;
   left: 50%;
   top: 0;
@@ -1336,3 +1337,17 @@ body {
   -webkit-animation-play-state: paused !important;
           animation-play-state: paused !important;
 }
+
+body,
+.container {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #fff5f8 40%,
+    #ffeef3 70%,
+    #ffffff 100%
+  );
+  overflow: hidden;
+}
+
+
