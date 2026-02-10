@@ -310,8 +310,21 @@
   <source src="music.mp3" type="audio/mpeg">
 </audio>
     <script src="main.js"></script>
+    <script>
+  const music = document.getElementById('bg-music');
+
+  const start = () => {
+    music.play().catch(() => {});
+    document.removeEventListener('click', start);
+    document.removeEventListener('touchstart', start);
+  };
+
+  document.addEventListener('click', start);
+  document.addEventListener('touchstart', start);
+</script>
   </body>
 </html>
+
 
 
 
