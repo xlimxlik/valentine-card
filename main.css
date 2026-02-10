@@ -1349,30 +1349,35 @@ background: linear-gradient(
 );
 overflow: hidden;
 }
-/* убираем все тени у листьев и травы */
-.flower__leaf,
-.flower__line,
-.flower__line__leaf,
-.flower__g-front__leaf,
-.flower__g-fr__leaf,
-.long-g .leaf {
-box-shadow: none !important;
-filter: none !important;
-}
-.flower__grass__overlay {
-display: none !important;
-}
-.long-g--6,
-.long-g--7 {
-filter: none !important;
-}
-[class*="overlay"],
-[class*="blur"] {
-filter: none !important;
-}
-.flower__g-fr .leaf,
-.flower__g-fr__leaf {
+/* Удаляем все тени у передней травы */
+.flower__g-front,
+.flower__g-front *,
+.flower__g-fr,
+.flower__g-fr * {
   box-shadow: none !important;
+  filter: none !important;
   -webkit-mask-image: none !important;
   mask-image: none !important;
+  opacity: 1 !important;
 }
+
+/* Заменяем темный цвет на прозрачный в градиентах */
+.flower__g-front__leaf {
+  background-image: linear-gradient(to bottom left, transparent, transparent), 
+                    linear-gradient(to bottom right, #064f0a 50%, transparent 50%, transparent) !important;
+}
+
+.flower__g-fr__leaf {
+  background-image: linear-gradient(to bottom left, transparent, transparent 98%), 
+                    linear-gradient(to bottom right, #106e18 45%, transparent 50%, transparent) !important;
+}
+
+/* Дополнительно удаляем тени у других элементов травы */
+.flower__grass__leaf {
+  background-image: linear-gradient(to top, transparent, transparent 30%, var(--c)) !important;
+}
+
+.flower__g-long__bottom {
+  background-image: linear-gradient(to top, transparent 30%, var(--c)) !important;
+}
+
