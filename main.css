@@ -1406,6 +1406,12 @@ overflow: hidden;
 .flower__g-long__bottom {
   background-image: linear-gradient(to top, transparent 30%, var(--c)) !important;
 }
+.long-g--6,
+.long-g--7 {
+  filter: none !important; /* Убираем размытие, которое создает тень */
+  opacity: 1 !important; /* Убираем прозрачность, которая создает эффект тени */
+  transform: none !important; /* Убираем трансформации, которые могут влиять на отображение */
+}
 
 
 
