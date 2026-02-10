@@ -38,6 +38,7 @@ repeating-linear-gradient(148deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transpare
 .flowers {
 position: relative;
 transform: scale(0.9);
+  z-index: 10;
 }
 
 .flower {
@@ -1418,6 +1419,251 @@ overflow: hidden;
 .long-g--7::after {
   display: none !important;
 }
+.envelope-wrapper {
+  position: relative; /* Чтобы z-index работал */
+  z-index: 100;       /* Выше, чем у цветов */
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+}
+
+#envelope {
+  position: relative;
+  height: 180px;
+  width: 280px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  margin: 0 auto;
+  background-color: #FF6863;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+#envelope:hover {
+  transform: scale(0.92);
+}
+
+.front {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 3;
+}
+
+.flap {
+  border-top: 98px solid #FF6863;
+  border-left: 140px solid transparent;
+  border-right: 140px solid transparent;
+  border-bottom: 82px solid transparent;
+  transform-origin: top;
+}
+
+.pocket {
+  border-left: 140px solid #FF8BA0;
+  border-right: 140px solid #FF8BA0;
+  border-bottom: 90px solid #FFA8B5;
+  border-top: 90px solid transparent;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.letter {
+  position: relative;
+  background-color: white;
+  width: 90%;
+  height: 95%;
+  top: 5%;
+  border-radius: 10px;
+  box-shadow: 0 2px 26px rgba(0, 0, 0, .12);
+  margin: 0 auto;
+  z-index: 2;
+  overflow: hidden;
+  padding: 15px;
+}
+
+.words {
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1d3557;
+  text-shadow: 0 1px 1px rgba(255,255,255,0.7);
+}
+
+.line1 {
+  top: 15%;
+  font-size: 18px;
+}
+
+.line2 {
+  top: 35%;
+  font-size: 18px;
+  font-weight: 600;
+  color: #e63946;
+}
+
+.line3 {
+  top: 55%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.line4 {
+  top: 75%;
+  text-align: center;
+  font-size: 22px;
+  color: #e63946;
+  font-style: italic;
+}
+
+.open .flap {
+  transform: rotateX(180deg);
+  transition: transform 0.4s ease, z-index 0.6s;
+  z-index: 1;
+}
+
+.close .flap {
+  transform: rotateX(0deg);
+  transition: transform 0.4s 0.6s ease, z-index 1s;
+  z-index: 5;
+}
+
+.open .letter {
+  transform: translateY(-80px);
+  transition: transform 0.4s 0.6s ease, z-index 0.6s;
+  z-index: 2;
+}
+
+.close .letter {
+  transform: translateY(0);
+  transition: transform 0.4s ease, z-index 1s;
+  z-index: 1;
+}
+
+.hearts {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.heart {
+  position: absolute;
+  bottom: 0;
+}
+
+.heart:before,
+.heart:after {
+  position: absolute;
+  content: "";
+  background: #d00000;
+  width: 50px;
+  height: 80px;
+  border-radius: 50px 50px 0 0;
+  transform-origin: 0 100%;
+}
+
+.heart:before {
+  left: 50px;
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.heart:after {
+  left: 0;
+  top: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.close .heart {
+  opacity: 0;
+  animation: none;
+}
+
+.a1 {
+  left: 20%;
+  transform: scale(0.6);
+  animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.7s;
+}
+
+.a2 {
+  left: 55%;
+  transform: scale(1);
+  animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.7s;
+}
+
+.a3 {
+  left: 10%;
+  transform: scale(0.8);
+  animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.7s;
+}
+
+@keyframes slideUp {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    top: -600px;
+    opacity: 0;
+  }
+}
+
+@keyframes sideSway {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: 50px;
+  }
+}
+
+/* Мобильная адаптация */
+@media (max-width: 480px) {
+  .envelope-wrapper {
+    height: 320px;
+  }
+  #envelope {
+    width: 240px;
+    height: 160px;
+  }
+  .flap {
+    border-top: 88px solid #FF6863;
+    border-left: 120px solid transparent;
+    border-right: 120px solid transparent;
+  }
+  .pocket {
+    border-left: 120px solid #FF8BA0;
+    border-right: 120px solid #FF8BA0;
+    border-bottom: 80px solid #FFA8B5;
+  }
+  .words {
+    font-size: 14px;
+  }
+  .line4 {
+    font-size: 20px;
+  }
+}
+
 
 
 
