@@ -1422,7 +1422,7 @@ overflow: hidden;
 }
 .envelope-wrapper {
   position: absolute; /* фиксированное положение */
-  top: 5vmin;         /* отступ сверху */
+  top: 10vmin;         /* отступ сверху */
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;       /* выше цветов */
@@ -1481,11 +1481,10 @@ overflow: hidden;
   margin: 0 auto;
   z-index: 2;
   overflow: hidden;
-  padding: 20px 15px; /* увеличим паддинг для воздуха */
   display: flex;
-  flex-direction: column;
-  justify-content: space-around; /* распределяем строки с равными отступами */
-  align-items: center;
+  justify-content: center; /* по вертикали */
+  align-items: center;     /* по горизонтали */
+  padding: 20px;
 }
 
 .words {
@@ -1499,6 +1498,10 @@ overflow: hidden;
 
 .line1 {
   font-size: 21px;
+  text-align: center;
+  line-height: 1.5;
+  max-width: 80%;          
+  word-wrap: break-word;
   font-weight: 600;
   font-weight: bold;
   color: #e63946;
@@ -1662,6 +1665,7 @@ overflow: hidden;
     font-size: 20px;
   }
 }
+
 
 
 
