@@ -1498,7 +1498,10 @@ overflow: hidden;
 }
 
 .line1 {
-  font-size: 18px;
+  font-size: 21px;
+  font-weight: 600;
+  font-weight: bold;
+  color: #e63946;
   
 }
 
@@ -1659,6 +1662,7 @@ overflow: hidden;
     font-size: 20px;
   }
 }
+
 
 
 
