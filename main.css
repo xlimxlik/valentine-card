@@ -7,7 +7,7 @@
 }
 
 :root {
-  --dark-color: #000;
+  --dark-color: rgba(0, 0, 0, 0.15);
 }
 
 body {
@@ -1349,5 +1349,6 @@ body,
   );
   overflow: hidden;
 }
+
 
 
