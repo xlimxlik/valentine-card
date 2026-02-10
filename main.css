@@ -1362,6 +1362,15 @@ body,
 .flower__grass__overlay {
   display: none !important;
 }
+.long-g--6,
+.long-g--7 {
+  filter: none !important;
+}
+[class*="overlay"],
+[class*="blur"] {
+  filter: none !important;
+}
+
 
 
 
