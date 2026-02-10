@@ -1359,6 +1359,10 @@ body,
   box-shadow: none !important;
   filter: none !important;
 }
+.flower__grass__overlay {
+  display: none !important;
+}
+
 
 
 
