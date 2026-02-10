@@ -1412,6 +1412,13 @@ overflow: hidden;
   opacity: 1 !important; /* Убираем прозрачность, которая создает эффект тени */
   transform: none !important; /* Убираем трансформации, которые могут влиять на отображение */
 }
+.long-g--6::before,
+.long-g--7::before,
+.long-g--6::after,
+.long-g--7::after {
+  display: none !important;
+}
+
 
 
 
