@@ -39,6 +39,7 @@ repeating-linear-gradient(148deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transpare
 position: relative;
 transform: scale(0.9);
   z-index: 10;
+  bottom: -10vmin; /* сдвигает весь блок цветов вниз */
 }
 
 .flower {
@@ -1659,6 +1660,7 @@ overflow: hidden;
     font-size: 20px;
   }
 }
+
 
 
 
